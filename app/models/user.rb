@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
 
-
   has_many :trades
 
   validates :username, uniqueness: {case_sensitive: false}
@@ -27,13 +26,9 @@ class User < ApplicationRecord
       #else position is a sale
       else
         position -= trade.quantity
-
       end
-
     end
-
-  position
-
+    position
   end
 
 
