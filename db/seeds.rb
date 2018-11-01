@@ -7,21 +7,30 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# User.destroy_all
-# Trade.destroy_all
+User.destroy_all
+Trade.destroy_all
+Asset.destroy_all
 
 
 puts "making users"
-  # User.create(username:"a1", email:"a@msn.com", password_digest: "hi")
+  User.create(username:"a", email:"a@hotmail.com", password_digest: "hi")
+  User.create(username:"b", email:"b@hotmail.com", password_digest: "hi")
+  User.create(username:"c", email:"c@hotmail.com", password_digest: "hi")
 puts "done making users"
 
+puts "making assets"
+
+  Asset.create(symbol: "BTCUSDT", name: "Bitcoin")
+  Asset.create(symbol: "ETHUSDT", name: "Ethereum")
+
+puts "done making assets"
 
 
 
 puts "making trades"
-  Trade.create(user_id:2, symbol:"BTCUSDT",buy:true, price:5000, quantity:0.5)
-  Trade.create(user_id:2, symbol:"BTCUSDT",buy:true, price:5050, quantity:1)
-  Trade.create(user_id:2, symbol:"BTCUSDT",buy:false, price:5050, quantity:3)
-  Trade.create(user_id:2, symbol:"BTCUSDT",buy:true, price:6000, quantity:10)
+  Trade.create(user_id:2, asset_id:1, buy:true, price:5000, quantity:0.5)
+  Trade.create(user_id:2, asset_id:1, buy:true, price:5050, quantity:1)
+  Trade.create(user_id:2, asset_id:1, buy:false, price:5050, quantity:3)
+  Trade.create(user_id:2, asset_id:1, buy:true, price:6000, quantity:10)
 
 puts "done making trades"
