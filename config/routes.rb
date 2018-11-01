@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index, :create]
       resources :trades, only: [:create]
+      resources :assets, only: [:index]
       post "/login", to: "auth#create"
       get "/profile", to: "users#profile"
     end

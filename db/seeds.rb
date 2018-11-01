@@ -22,6 +22,9 @@ puts "making assets"
 
   Asset.create(symbol: "BTCUSDT", name: "Bitcoin")
   Asset.create(symbol: "ETHUSDT", name: "Ethereum")
+  Asset.create(symbol: "BCCUSDT", name: "Bitcoin Cash")
+  Asset.create(symbol: "XRPUSDT", name: "Ripple")
+  Asset.create(symbol: "LTCUSDT", name: "Litecoin")
 
 puts "done making assets"
 
