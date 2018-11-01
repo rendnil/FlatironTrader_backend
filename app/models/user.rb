@@ -36,18 +36,25 @@ class User < ApplicationRecord
   #calculate volume weighted average price
   #VWAP = (sum(P*Q)/(sum Q))
   def weighted_price
-    total_usd = 0
 
-    self.trades.each do |trade|
-      if trade.buy == true
-        total_usd += (trade.price * trade.quantity)
-      else
-        total_usd -= (trade.price * trade.quantity)
+    #check if the user has any trades
+    if self.net_position == 0
+      vwap = 0
+    else
+      total_usd = 0
+
+      self.trades.each do |trade|
+        if trade.buy == true
+          total_usd += (trade.price * trade.quantity)
+        else
+          total_usd -= (trade.price * trade.quantity)
+        end
       end
-    end
 
-    vwap = total_usd/self.net_position
+      vwap = total_usd/self.net_position
+    end
   end
+
 
 
 

@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2018_11_01_144049) do
   create_table "trades", force: :cascade do |t|
     t.integer "user_id"
     t.integer "asset_id"
-    t.string "symbol"
     t.boolean "buy"
     t.float "price"
     t.float "quantity"
