@@ -15,7 +15,7 @@ class Api::V1::TradesController < ApplicationController
   private
 
   def trade_params
-    params.require(:trade).permit(:user_id, :symbol, :buy, :price, :quantity)
+    params.require(:trade).permit(:user_id, :asset_id, :buy, :price, :quantity)
 
   end
 

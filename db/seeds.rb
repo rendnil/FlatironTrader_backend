@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.destroy_all
+#User.destroy_all
 Trade.destroy_all
 Asset.destroy_all
 
@@ -31,9 +31,25 @@ puts "done making assets"
 
 
 puts "making trades"
-  Trade.create(user_id:2, asset_id:1, buy:true, price:5000, quantity:0.5)
-  Trade.create(user_id:2, asset_id:1, buy:true, price:5050, quantity:1)
-  Trade.create(user_id:2, asset_id:1, buy:false, price:5050, quantity:3)
-  Trade.create(user_id:2, asset_id:1, buy:true, price:6000, quantity:10)
+  Trade.create(user_id:6, asset_id: Asset.find_by(name: "Bitcoin").id, buy:true, price:5000, quantity:1)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Bitcoin").id, buy:true, price:5050, quantity:1)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Bitcoin").id,buy:false, price:5000, quantity:3)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Bitcoin").id, buy:true, price:6000, quantity:10)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Bitcoin").id, buy:true, price:7000, quantity:10)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Bitcoin").id, buy:true, price:8000, quantity:10)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Bitcoin").id, buy:true, price:2000, quantity:10)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Bitcoin").id, buy:true, price:3000, quantity:10)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Bitcoin").id, buy:true, price:5000, quantity:5)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Ethereum").id, buy:true, price:6000, quantity:10)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Ethereum").id, buy:true, price:6000, quantity:7)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Ethereum").id, buy:true, price:6000, quantity:10)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Ethereum").id, buy:true, price:7000, quantity:10)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Ethereum").id, buy:true, price:8000, quantity:10)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Ethereum").id, buy:true, price:2000, quantity:10)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Ethereum").id, buy:true, price:3000, quantity:10)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Ethereum").id, buy:true, price:5000, quantity:5)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Ethereum").id, buy:true, price:6000, quantity:10)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Ethereum").id, buy:true, price:6000, quantity:7)
+  Trade.create(user_id:6, asset_id:Asset.find_by(name: "Ethereum").id, buy:true, price:6000, quantity:10)
 
 puts "done making trades"
