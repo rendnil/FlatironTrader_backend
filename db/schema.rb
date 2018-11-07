@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_01_144049) do
+ActiveRecord::Schema.define(version: 2018_11_06_161855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,17 @@ ActiveRecord::Schema.define(version: 2018_11_01_144049) do
   create_table "assets", force: :cascade do |t|
     t.string "symbol"
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "iexes", force: :cascade do |t|
+    t.string "symbol"
+    t.string "name"
+    t.time "latestTime"
+    t.float "changePercent"
+    t.float "bidPrice"
+    t.float "askPrice"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

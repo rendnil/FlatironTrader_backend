@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  symbol: MyString
+  name: MyString
+  latestTime: 2018-11-06 11:18:55
+  changePercent: 1.5
+  bidPrice: 1.5
+  askPrice: 1.5
+
+two:
+  symbol: MyString
+  name: MyString
+  latestTime: 2018-11-06 11:18:55
+  changePercent: 1.5
+  bidPrice: 1.5
+  askPrice: 1.5

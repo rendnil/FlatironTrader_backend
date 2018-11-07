@@ -1,0 +1,2 @@
+class Iex < ApplicationRecord
+end
