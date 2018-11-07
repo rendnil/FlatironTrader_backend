@@ -17,19 +17,37 @@ class User < ApplicationRecord
 
   #calculate the net position in a given crypto for a user
   def net_position
+    position_obj = { }
     position = 0
     self.trades.each do |trade|
 
-      #check if a long position
-      if trade.buy == true
-        position += trade.quantity
+      #check if the asset exists
+      if !position_obj[trade.asset.symbol]
 
-      #else position is a sale
+      #check if a long position
+        if trade.buy == true
+          position_obj[trade.asset.symbol] = trade.quantity
+
+        #else position is a sale
+        else
+          position_obj[trade.asset.symbol] =- trade.quantity
+        end
+
       else
-        position -= trade.quantity
+        if trade.buy == true
+          position_obj[trade.asset.symbol] += trade.quantity
+
+        #else position is a sale
+        else
+          position_obj[trade.asset.symbol] -= trade.quantity
+        end
+
+
+
       end
+      puts position_obj
     end
-    position
+    position_obj
   end
 
 
