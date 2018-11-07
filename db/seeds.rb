@@ -20,11 +20,11 @@ puts "done making users"
 
 puts "making assets"
 
-  Asset.create(symbol: "BTCUSDT", name: "Bitcoin")
-  Asset.create(symbol: "ETHUSDT", name: "Ethereum")
-  Asset.create(symbol: "BCCUSDT", name: "Bitcoin Cash")
-  Asset.create(symbol: "XRPUSDT", name: "Ripple")
-  Asset.create(symbol: "LTCUSDT", name: "Litecoin")
+  Asset.create(symbol: "BTC", name: "Bitcoin")
+  Asset.create(symbol: "ETH", name: "Ethereum")
+  Asset.create(symbol: "BCH", name: "Bitcoin Cash")
+  Asset.create(symbol: "XRP", name: "Ripple")
+  Asset.create(symbol: "LTC", name: "Litecoin")
 
 puts "done making assets"
 
