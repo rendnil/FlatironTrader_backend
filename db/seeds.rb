@@ -34,9 +34,9 @@ puts "making trades"
   Trade.create(user_id:User.all.last.id, asset_id: Asset.find_by(name: "Bitcoin").id, buy:true, price:5000, quantity:1)
   Trade.create(user_id:User.all.last.id, asset_id: Asset.find_by(name: "Bitcoin").id, buy:true, price:6000, quantity:1)
   Trade.create(user_id:User.all.last.id, asset_id: Asset.find_by(name: "Bitcoin").id, buy:false, price:6000, quantity:1)
-  Trade.create(user_id:User.all.last.id, asset_id: Asset.find_by(name: "Ethereum").id, buy:false, price:200, quantity:1)
-  Trade.create(user_id:User.all.last.id, asset_id: Asset.find_by(name: "Ethereum").id, buy:false, price:210, quantity:1)
-  Trade.create(user_id:User.all.last.id, asset_id: Asset.find_by(name: "Ethereum").id, buy:false, price:220, quantity:1)
+  Trade.create(user_id:User.all.last.id, asset_id: Asset.find_by(name: "Ethereum").id, buy:true, price:200, quantity:1)
+  Trade.create(user_id:User.all.last.id, asset_id: Asset.find_by(name: "Ethereum").id, buy:true, price:210, quantity:1)
+  Trade.create(user_id:User.all.last.id, asset_id: Asset.find_by(name: "Ethereum").id, buy:true, price:220, quantity:1)
   Trade.create(user_id:User.all.last.id, asset_id: Asset.find_by(name: "Ethereum").id, buy:true, price:200, quantity:1)
 
   Trade.create(user_id:User.all.first.id, asset_id: Asset.find_by(name: "Bitcoin").id, buy:true, price:5000, quantity:1)
