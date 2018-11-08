@@ -47,11 +47,14 @@ class User < ApplicationRecord
           position_obj[trade.asset.symbol]["net_position"] -= trade.quantity
         end
       end
-      puts position_obj
-    end
 
-    position_array = position_obj.map do |key, data|
-      {"symbol"=> key, "net_position"=> data["net_position"], "weighted_price" =>data["weighted_price"] }
+    end
+    position_array = [ ]
+    position_obj.each do |key, data|
+      ####check if there's any position
+     if data["net_position"] != 0
+        position_array.push({"symbol"=> key, "net_position"=> data["net_position"], "weighted_price" =>data["weighted_price"] })
+      end
     end
     position_array
   end
