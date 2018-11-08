@@ -36,18 +36,27 @@ class User < ApplicationRecord
         end
 
       else
+        ##########need to check that vwap is not divided by 0
         #byebug
-        if trade.buy == true
+        if trade.buy == true && ((position_obj[trade.asset.symbol]["net_position"] + trade.quantity) != 0)
+
           position_obj[trade.asset.symbol]["weighted_price"] = ((position_obj[trade.asset.symbol]["net_position"]*position_obj[trade.asset.symbol]["weighted_price"])+(trade.quantity*trade.price))/(position_obj[trade.asset.symbol]["net_position"]+trade.quantity)
           position_obj[trade.asset.symbol]["net_position"] += trade.quantity
 
         #else position is a sale
-        else
+        elsif trade.buy == false && ((position_obj[trade.asset.symbol]["net_position"] - trade.quantity) != 0)
           position_obj[trade.asset.symbol]["weighted_price"] = ((position_obj[trade.asset.symbol]["net_position"]*position_obj[trade.asset.symbol]["weighted_price"])-(trade.quantity*trade.price))/(position_obj[trade.asset.symbol]["net_position"]-trade.quantity)
           position_obj[trade.asset.symbol]["net_position"] -= trade.quantity
+        else
+          position_obj[trade.asset.symbol]["weighted_price"] = 0
+          position_obj[trade.asset.symbol]["net_position"] = 0
+
+
         end
+
       end
 
+      puts position_obj
     end
     position_array = [ ]
     position_obj.each do |key, data|
