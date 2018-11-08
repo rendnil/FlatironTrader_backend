@@ -19,6 +19,7 @@ class User < ApplicationRecord
 
   #calculate the net position in a given crypto for a user
   def positions
+    position_array = [ ]
     position_obj = { }
     self.trades.each do |trade|
 
@@ -48,7 +49,11 @@ class User < ApplicationRecord
       end
       puts position_obj
     end
-    position_obj
+
+    position_array = position_obj.map do |key, data|
+      {"symbol"=> key, "net_position"=> data["net_position"], "weighted_price" =>data["weighted_price"] }
+    end
+    position_array
   end
 
 
