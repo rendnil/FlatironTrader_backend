@@ -3,7 +3,7 @@
 class User < ApplicationRecord
   has_secure_password
 
-  has_many :trades
+  has_many :trades, dependent: :destroy
   has_many :assets, through: :trades
 
   validates :username, uniqueness: {case_sensitive: false}
