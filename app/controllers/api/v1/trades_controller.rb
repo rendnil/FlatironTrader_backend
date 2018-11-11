@@ -9,7 +9,7 @@ class Api::V1::TradesController < ApplicationController
 
       render json: { trade: TradeSerializer.new(@trade), user:UserSerializer.new(@trade.user)}, status: :created
     else
-      render json: { error: 'failed to create trade' }, status: :not_acceptable
+      render json: { error: 'Failed to Execute Trade' }, status: :not_acceptable
     end
   end
 
