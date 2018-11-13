@@ -5,8 +5,8 @@ class Api::V1::TradesController < ApplicationController
   def create
 
     @trade = Trade.create(user_id: trade_params["user_id"], asset_id: Asset.find_by(symbol:trade_params["symbol"]).id, buy: trade_params["buy"],price: trade_params["price"],quantity: trade_params["quantity"])
-    if @trade.valid?
 
+    if @trade.valid?
       render json: { trade: TradeSerializer.new(@trade), user:UserSerializer.new(@trade.user)}, status: :created
     else
       render json: { error: 'Failed to Execute Trade' }, status: :not_acceptable
