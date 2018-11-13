@@ -17,8 +17,10 @@ puts "making users"
   #User.create(username:"a", email:"a@hotmail.com", password_digest: "hi")
 
 
-  20.times do
+  10.times do
     User.create(username:Faker::GreekPhilosophers.name, email:"a@hotmail.com", password_digest: "hi")
+    User.create(username:Faker::Ancient.god, email:"a@hotmail.com", password_digest: "hi")
+    User.create(username:Faker::Ancient.hero, email:"a@hotmail.com", password_digest: "hi")
   end
 
 puts "done making users"
